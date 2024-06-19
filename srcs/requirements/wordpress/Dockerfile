@@ -27,4 +27,4 @@ COPY ./tools/new.sh /new.sh
 
 RUN chmod +x /new.sh
 
-CMD [ "sh", "/new.sh" ]
+ENTRYPOINT [ "sh", "/new.sh" ]
