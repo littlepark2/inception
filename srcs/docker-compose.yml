@@ -10,6 +10,7 @@ services:
       - inception
     volumes:
       - db:/var/lib/mysql
+    restart: always
 
   wordpress:
     container_name: wordpress
@@ -24,6 +25,7 @@ services:
       - inception
     depends_on:
       - mariadb
+    restart: always
 
   nginx:
     container_name: nginx

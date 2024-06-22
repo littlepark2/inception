@@ -15,9 +15,9 @@ RUN mkdir -p /var/www/html && \
 	chmod -R 755 /var/www/html
 
 RUN cd /var/www/html && \
-	curl -O https://wordpress.org/latest.tar.gz && \
-	tar -xzvf latest.tar.gz && \
-	rm latest.tar.gz && \
+	curl -O https://wordpress.org/wordpress-6.5.4.tar.gz && \
+	tar -xzvf wordpress-6.5.4.tar.gz && \
+	rm wordpress-6.5.4.tar.gz && \
 	mv wordpress/* . && \
 	rm -rf wordpress
 

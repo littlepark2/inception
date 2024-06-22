@@ -13,7 +13,7 @@ if [ ! -f "/var/www/html/wp-config.php" ]; then
     sudo -u www-data wp core download
 
     sudo -u www-data wp config create --dbname=${DB_NAME} --dbuser=${DB_USER} --dbpass=${DB_PASSWORD} --dbhost=mariadb --path=/var/www/html >> /var/www/html/error/log.txt
-    sudo -u www-data wp core install --url=localhost --title=wordpress --admin_user=${WORDPRESS_ADMIN_USER} --admin_password=${WORDPRESS_ADMIN_PASSWORD} --admin_email=${WORDPRESS_ADMIN_EMAIL} --path=/var/www/html >> /var/www/html/error/log.txt
+    sudo -u www-data wp core install --url=${WORDPRESS_URL} --title=wordpress --admin_user=${WORDPRESS_ADMIN_USER} --admin_password=${WORDPRESS_ADMIN_PASSWORD} --admin_email=${WORDPRESS_ADMIN_EMAIL} --path=/var/www/html >> /var/www/html/error/log.txt
     sudo -u www-data wp user create ${WORDPRESS_USER} user2@example.com --role=author --user_pass=${WORDPRESS_USER_PASSWORD} --path=/var/www/html
 fi
 
